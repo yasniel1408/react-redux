@@ -1,6 +1,6 @@
 import React, { Component, useRef } from 'react';
-import updateWord from "../../store/palabra/action"
-import { connect } from "react-redux"
+import updateWord from "../../store/palabra/action";
+import { connect } from "react-redux";
 
 const Form = ({ updateWord }) => {
 	const palabraRef = useRef(null);

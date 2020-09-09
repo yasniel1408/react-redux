@@ -1,12 +1,32 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import {selectActiveWord}  from "../../store/palabra/reducer";
 
-class Palabra extends Componet{
+
+class Palabra extends Component{
 
     render(){
-        <div>
-            <p>PALABRAAAAAA</p>
-        </div>
+        return(
+            <div>
+                <p>{this.props.palabra}</p>
+            </div>
+        )
+    }
+    
+}
+
+//const Palabra = ({ palabra }) => <div>{palabra}</div>
+
+const mapStateToProps = state =>{
+    return{
+        palabra: selectActiveWord(state)
     }
 }
 
-export default Palabra
+export default connect(mapStateToProps)(Palabra);
+
+
+
+
+
+
